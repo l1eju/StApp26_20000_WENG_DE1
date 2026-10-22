@@ -1,0 +1,169 @@
+
+======================================================================
+residentiel : dimensions
+======================================================================
+lignes = 25728   colonnes = 29
+mémoire ≈ 7.7 Mo
+années : 2011 à 2025 (15 valeurs)
+EPCI distincts par année :
+annee
+2011    2472
+2012    2472
+2013    2351
+2014    2057
+2015    2044
+2016    1969
+2017    1203
+2018    1200
+2019    1195
+2020    1191
+2021    1190
+2022    1191
+2023    1191
+2024    1191
+2025    1191
+
+======================================================================
+secteurs : dimensions
+======================================================================
+lignes = 502422   colonnes = 9
+mémoire ≈ 49.7 Mo
+années : 2011 à 2025 (15 valeurs)
+EPCI distincts par année :
+annee
+2011    2472
+2012    2472
+2013    2351
+2014    2057
+2015    2044
+2016    1969
+2017    1203
+2018    1200
+2019    1195
+2020    1191
+2021    1190
+2022    1191
+2023    1191
+2024    1191
+2025    1191
+
+======================================================================
+residentiel : valeurs manquantes (%)
+======================================================================
+taux_de_chauffage_electrique                                              95.0
+residences_principales_apres_2006                                         95.0
+residences_principales_les_plus_recentes                                  95.0
+nombre_d_habitants                                                        90.0
+residences_principales_avant_1919                                         90.0
+residences_principales_de_1946_a_1970                                     90.0
+taux_de_logements_collectifs                                              90.0
+taux_de_residences_principales                                            90.0
+residences_principales_de_1991_a_2005                                     90.0
+residences_principales_de_1919_a_1945                                     90.0
+residences_principales_de_1971_a_1990                                     90.0
+dju_a_tn                                                                  60.1
+part_thermosensible                                                       55.3
+conso_moyenne_corrigee_de_l_alea_climatique_usages_thermosensibles_mwh    55.3
+thermosensibilite_moyenne_kwh_dju                                         55.3
+conso_moyenne_usages_thermosensibles_mwh                                  55.3
+nombre_de_mailles_secretisees                                             55.1
+dju_a_tr                                                                  55.0
+conso_totale_mwh                                                          15.9
+nb_sites                                                                  15.9
+conso_moyenne_mwh                                                         15.9
+code_region                                                                0.0
+nom_departement                                                            0.0
+nom_region                                                                 0.0
+annee                                                                      0.0
+code_epci                                                                  0.0
+nom_epci                                                                   0.0
+type_epci                                                                  0.0
+code_departement                                                           0.0
+
+======================================================================
+residentiel : plages de valeurs
+======================================================================
+                                        min        50%          max
+part_thermosensible                   2.100     22.860       60.880
+thermosensibilite_moyenne_kwh_dju     0.000      0.748        2.254
+taux_de_chauffage_electrique          8.112     28.514       69.820
+taux_de_logements_collectifs          1.563     16.552       86.597
+dju_a_tr                            767.299   1565.190     2833.697
+dju_a_tn                           1066.727   1653.044     6205.000
+conso_moyenne_mwh                     2.152      5.365       10.197
+nb_sites                             75.000   8313.000  3706272.000
+nombre_d_habitants                 3915.000  23592.000  7103801.000
+part_thermosensible : 100.0% des valeurs > 1 ; 0.0% > 100  (unité : fraction 0-1 ou pourcentage 0-100 ?)
+taux_de_chauffage_electrique : 100.0% des valeurs > 1 ; 0.0% > 100  (unité : fraction 0-1 ou pourcentage 0-100 ?)
+conso_totale_mwh : 0 valeurs négatives
+conso_moyenne_mwh : 0 valeurs négatives
+
+======================================================================
+doublons et EPCI à cheval sur plusieurs départements
+======================================================================
+residentiel : lignes dupliquées sur ['annee', 'code_epci', 'code_departement'] = 0
+residentiel : couples (année, EPCI) présents dans >1 département = 1253 sur 24108
+secteurs : lignes dupliquées sur ['annee', 'code_epci', 'code_departement', 'code_categorie_consommation', 'code_grand_secteur', 'code_secteur_naf2'] = 0
+secteurs : groupes présents dans >1 département = 14724 sur 483314
+  dont conso identique d'un département à l'autre (total répété) : 92.7%
+
+======================================================================
+secteurs : rupture de série autour de 2018
+======================================================================
+consommation totale (GWh) par grand secteur (EPCI multi-départements possiblement comptés plusieurs fois) :
+code_grand_secteur  AGRICULTURE  INCONNU  INDUSTRIE  PETIT_PROFESSIONNEL  RESIDENTIEL  TERTIAIRE
+annee                                                                                           
+2011                    10745.0   5977.0   307364.0             440936.0    1180071.0  1229963.0
+2012                     9595.0   3736.0   315060.0             452697.0    1257476.0  1279017.0
+2013                     4854.0   3507.0   167086.0             280572.0     744873.0   778143.0
+2014                     3084.0    736.0    69431.0              53744.0     155135.0   160480.0
+2015                     3436.0    880.0    73649.0              62977.0     179764.0   193125.0
+2016                     3647.0   1315.0    79855.0              56320.0     174368.0   189443.0
+2017                     3672.0     26.0    76488.0              40330.0     218208.0   187032.0
+2018                     7636.0  14481.0    76219.0                  NaN     227258.0   224858.0
+2019                     7749.0  13608.0    76368.0                  NaN     225375.0   220411.0
+2020                     7984.0   2526.0    74213.0                  NaN     228081.0   211535.0
+2021                     7618.0   1612.0    78638.0                  NaN     237660.0   219895.0
+2022                     7747.0    572.0    78635.0                  NaN     216250.0   219050.0
+2023                     7076.0    574.0    75023.0                  NaN     210506.0   208037.0
+2024                     6933.0    573.0    72907.0                  NaN     210988.0   206813.0
+2025                     7301.0    509.0    72549.0                  NaN     212996.0   208761.0
+nombre de lignes par grand secteur :
+code_grand_secteur  AGRICULTURE  INCONNU  INDUSTRIE  PETIT_PROFESSIONNEL  RESIDENTIEL  TERTIAIRE
+annee                                                                                           
+2011                     2627.0   2627.0     2627.0               2627.0       2627.0     2627.0
+2012                     2627.0   2627.0     2627.0               2627.0       2627.0     2627.0
+2013                     2490.0   2490.0     2490.0               2490.0       2490.0     2490.0
+2014                     2146.0   2146.0     2146.0               2146.0       2146.0     2146.0
+2015                     2136.0   2136.0     2136.0               2136.0       2136.0     2136.0
+2016                     2071.0   2071.0     2071.0               2071.0       2071.0     2071.0
+2017                     1300.0   1300.0     1300.0               1300.0       1300.0     1300.0
+2018                     2876.0   1367.0    16449.0                  NaN       1300.0    29315.0
+2019                     2886.0   1829.0    16169.0                  NaN       1294.0    29003.0
+2020                     2886.0   1653.0    16055.0                  NaN       1290.0    28921.0
+2021                     2886.0   1568.0    16144.0                  NaN       1289.0    29216.0
+2022                     2879.0   1545.0    16106.0                  NaN       1290.0    29447.0
+2023                     2879.0   1555.0    16155.0                  NaN       1290.0    29587.0
+2024                     2857.0   1484.0    16147.0                  NaN       1289.0    29635.0
+2025                     2858.0   1510.0    16111.0                  NaN       1289.0    29731.0
+
+======================================================================
+codes et noms EPCI (residentiel)
+======================================================================
+codes distincts = 3246   noms distincts = 5542
+codes avec plusieurs noms = 1564
+  200000172 : ['CC Faucigny-Glières', 'Communauté de communes Faucigny-Glières']
+  200000321 : ['CA des 2 Rives de la Seine', 'CA des deux Rives de la Seine']
+  200000420 : ['CC de la Vôge Vers les Rives de la Moselle', 'CC de la Vôge vers les Rives de la Moselle']
+  200000438 : ['CC du Pays de Pontchâteau Saint-Gildas-des-Bois', 'CC du Pays de Pontchâteau Saint-Gildas-des-bois', 'CC du Pays de Pontchâteau St Gildas des Bois', 'Communauté de communes du Pays de Pontchâteau Saint-Gildas-des-Bois']
+  200000487 : ['CC du Plateau de Lommoye', 'CC du Plateau de Lommoye (CCPL)', 'CC du Plateau de Lommoye (Ccpl)']
+
+======================================================================
+codes département : données contre fond de carte
+======================================================================
+codes dans les données = 94   codes dans le fond de carte = 96
+longueurs des codes dans les données : {2: 25728}
+exemples de codes dans les données : ['01', '02', '03', '04', '05', '06'] ... ['90', '91', '92', '93', '94', '95']
+codes des données ABSENTS du fond de carte (non affichables) : aucun
+codes du fond de carte ABSENTS des données (départements vides) : ['2A', '2B']
+noms de département distincts = 95 (codes distincts = 94)

@@ -1,0 +1,122 @@
+
+======================================================================
+cleaning log
+======================================================================
+                                                         check   value
+0                                       residential rows (raw)   25728
+1                          code_epci: codes with several names    1564
+2                   code_departement: codes with several names       1
+3                        code_region: codes with several names       0
+4                         dju_a_tr above 4000 (set to missing)       0
+5                         dju_a_tn above 4000 (set to missing)      52
+6          thermosensibilite_moyenne_kwh_dju equal to 0 (kept)       2
+7                      EPCI-years found in several departments    1253
+8                               of which with different totals       0
+9                     residential rows (one per EPCI and year)   24108
+10                        EPCI present in every year 2018-2025    1173
+11                                           sector rows (raw)  502422
+12    sector rows removed (EPCI total repeated per department)   19108
+13                                            sector rows left  483314
+14  sector rows with missing consumption (statistical secrecy)    8228
+
+======================================================================
+availability by year (% of EPCI with a value)
+======================================================================
+       conso_totale_mwh  part_thermosensible  thermosensibilite_moyenne_kwh_dju  dju_a_tr  dju_a_tn  taux_de_chauffage_electrique  nombre_d_habitants
+annee                                                                                                                                                
+2011               75.0                  0.0                                0.0       0.0       0.0                           0.0                 0.0
+2012               74.3                  0.0                                0.0       0.0       0.0                           0.0                 0.0
+2013               72.4                  0.0                                0.0       0.0       0.0                           0.0                 0.0
+2014               71.7                  0.0                                0.0       0.0       0.0                           0.0                 0.0
+2015               70.2                  0.0                                0.0       0.0       0.0                           0.0                 0.0
+2016               63.4                  0.0                                0.0       0.0       0.0                           0.0                 0.0
+2017               93.8                 93.6                               93.8     100.0       0.0                           0.0                 0.0
+2018              100.0                 99.8                               99.8      99.8      95.8                           0.0                 0.0
+2019              100.0                 99.7                               99.7      99.7      99.7                           0.0                 0.0
+2020              100.0                 99.7                               99.7      99.7      99.7                           0.0                 0.0
+2021              100.0                 99.7                               99.7      99.7      99.7                           0.0                 0.0
+2022              100.0                 96.9                               96.9      96.9      96.9                           0.0                 0.0
+2023              100.0                100.0                              100.0     100.0     100.0                           0.0                 0.0
+2024              100.0                100.0                              100.0     100.0     100.0                         100.0               100.0
+2025              100.0                100.0                              100.0     100.0     100.0                           0.0               100.0
+
+======================================================================
+missing values (%)
+======================================================================
+                                                                        missing_%_all_years  missing_%_since_2018
+taux_de_chauffage_electrique                                                           95.1                  87.5
+residences_principales_les_plus_recentes                                               95.1                  87.5
+residences_principales_apres_2006                                                      95.1                  87.5
+residences_principales_avant_1919                                                      90.1                  75.0
+conso_per_capita_mwh                                                                   90.1                  75.0
+residences_principales_de_1971_a_1990                                                  90.1                  75.0
+nombre_d_habitants                                                                     90.1                  75.0
+taux_de_logements_collectifs                                                           90.1                  75.0
+taux_de_residences_principales                                                         90.1                  75.0
+residences_principales_de_1946_a_1970                                                  90.1                  75.0
+residences_principales_de_1919_a_1945                                                  90.1                  75.0
+residences_principales_de_1991_a_2005                                                  90.1                  75.0
+dju_gap                                                                                60.8                   1.0
+dju_a_tn                                                                               60.8                   1.0
+conso_moyenne_corrigee_de_l_alea_climatique_usages_thermosensibles_mwh                 56.0                   0.5
+thermo_class                                                                           56.0                   0.5
+weather_effect_mwh                                                                     56.0                   0.5
+thermosensibilite_moyenne_kwh_dju                                                      56.0                   0.5
+part_thermosensible                                                                    56.0                   0.5
+conso_moyenne_usages_thermosensibles_mwh                                               56.0                   0.5
+nombre_de_mailles_secretisees                                                          55.7                   0.0
+dju_a_tr                                                                               55.7                   0.5
+nb_sites                                                                               16.1                   0.0
+conso_gwh                                                                              16.1                   0.0
+conso_totale_mwh                                                                       16.1                   0.0
+conso_moyenne_mwh                                                                      16.1                   0.0
+annee                                                                                   0.0                   0.0
+nom_epci                                                                                0.0                   0.0
+code_epci                                                                               0.0                   0.0
+code_region                                                                             0.0                   0.0
+type_epci                                                                               0.0                   0.0
+nom_region                                                                              0.0                   0.0
+nom_departement                                                                         0.0                   0.0
+code_departement                                                                        0.0                   0.0
+in_stable_panel                                                                         0.0                   0.0
+
+======================================================================
+national table (consumption in GWh, indicators weighted by sites)
+======================================================================
+sector_group  non_residential_gwh  residential_gwh  total_gwh  n_epci  part_thermosensible  thermosensibilite_moyenne_kwh_dju  dju_a_tr  dju_a_tn  dju_gap  weather_effect_mwh  total_twh
+annee                                                                                                                                                                                    
+2011                    181590.08         99072.44  280662.52    2472                  NaN                                NaN       NaN       NaN      NaN                 NaN     280.66
+2012                    185857.43        106754.13  292611.56    2472                  NaN                                NaN       NaN       NaN      NaN                 NaN     292.61
+2013                    187575.20        105299.35  292874.56    2351                  NaN                                NaN       NaN       NaN      NaN                 NaN     292.87
+2014                    181245.93         97683.87  278929.80    2057                  NaN                                NaN       NaN       NaN      NaN                 NaN     278.93
+2015                    184068.25         99023.09  283091.34    2044                  NaN                                NaN       NaN       NaN      NaN                 NaN     283.09
+2016                    183403.43         91387.33  274790.76    1969                  NaN                                NaN       NaN       NaN      NaN                 NaN     274.79
+2017                    191974.91        140661.50  332636.41    1203                31.85                               0.95   1636.12       NaN      NaN                0.03     332.64
+2018                    197353.96        148458.45  345812.41    1200                28.35                               0.85   1623.81   1669.04   -55.64               -0.08     345.81
+2019                    195272.52        147790.94  343063.46    1195                23.98                               0.70   1646.71   1649.66    -2.94               -0.01     343.06
+2020                    182846.68        149330.34  332177.01    1191                20.13                               0.66   1482.45   1659.00  -176.54               -0.12     332.18
+2021                    190244.42        156796.50  347040.92    1190                21.77                               0.59   1811.85   1649.67   162.18                0.09     347.04
+2022                    189694.15        143092.85  332787.00    1191                14.29                               0.55   1160.86   1580.12  -419.26               -0.23     332.79
+2023                    180221.45        139223.25  319444.70    1191                20.84                               0.60   1509.24   1648.95  -139.71               -0.09     319.44
+2024                    178348.43        139384.27  317732.70    1191                20.04                               0.57   1520.73   1592.89   -72.15               -0.04     317.73
+2025                    179118.89        141226.65  320345.54    1191                19.58                               0.54   1560.25   1583.23   -22.98               -0.01     320.35
+
+======================================================================
+departments in 2025: 5 highest part_thermosensible
+======================================================================
+     code_departement     nom_departement  n_epci  part_thermosensible  thermosensibilite_moyenne_kwh_dju
+1349               67            Bas-Rhin       8                26.23                               0.53
+1310               28        Eure-et-Loir       9                25.30                               0.81
+1343               61                Orne      16                24.71                               0.77
+1370               88              Vosges      10                24.62                               0.42
+1336               54  Meurthe-et-Moselle      20                24.55                               0.40
+
+======================================================================
+departments in 2025: 5 lowest part_thermosensible
+======================================================================
+     code_departement   nom_departement  n_epci  part_thermosensible  thermosensibilite_moyenne_kwh_dju
+1289               06   Alpes-Maritimes       7                12.92                               0.47
+1296               13  Bouches-du-Rhône       4                14.46                               0.45
+1365               83               Var      12                14.79                               0.59
+1316               34           Hérault      16                15.51                               0.50
+1294               11              Aude      10                15.86                               0.55
