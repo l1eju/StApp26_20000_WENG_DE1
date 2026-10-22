@@ -1,60 +1,62 @@
-# Storyboard : Face au froid
+# Storyboard: Facing the cold
 
-**Public :** équipes territoriales (collectivités, Enedis).
-**Message principal :** **À confirmer avec les données.** Les titres d'insight ci-dessous sont des hypothèses à valider ou corriger après l'analyse.
+**Audience:** local teams (towns, regions, Enedis).
+**Main message:** *Dependence on the cold is not spread evenly, and one winter alone can mislead.*
 
-Navigation de l'application : 5 pages, une idée par page, un titre d'une phrase en tête de chaque page.
-
----
-
-## Page 1 : Intro (hook et contexte)
-
-- **Titre (hook) :** quand la température baisse d'un degré, tous les territoires ne consomment pas pareil.
-- **Contenu :** définition de la part thermosensible, de la thermosensibilité (kWh par DJU) et des DJU. Périmètre : EPCI, 2011 à 2025. Rappel que la thermosensibilité concerne le secteur Résidentiel.
-- **Interaction :** un encadré « méthodes et définitions » dépliable.
-
-## Page 2 : Vue d'ensemble
-
-- **Titre :** [hypothèse] la consommation évolue-t-elle différemment selon les secteurs depuis 2011 ?
-- **Sidebar :** plage d'années, région(s), secteur, métrique.
-- **KPI (liés aux filtres) :** consommation totale (GWh), part thermosensible moyenne (Résidentiel), taux de chauffage électrique moyen, nombre d'EPCI affichés.
-- **Visuel 1 :** courbe de la consommation par grand secteur, 2011-2025, avec une annotation sur la rupture de série de 2018.
-- **Visuel 2 :** écart de DJU par année (réalisés moins normaux), pour voir les hivers plus froids ou plus doux que la normale.
-
-## Page 3 : Explorer les territoires
-
-- **Titre :** [hypothèse] la dépendance au froid varie fortement d'un territoire à l'autre.
-- **Visuel 3 :** carte de la part thermosensible **par département**, pour une année choisie (fond de carte déjà dans `assets/`, Licence ouverte). Les classements et le nuage de points restent au niveau EPCI.
-- **Visuel 4 :** top et bottom 10 des EPCI.
-- **Visuel 5 :** petits multiples par région, évolution dans le temps.
-- **Visuel 6 :** nuage de points part thermosensible contre taux de chauffage électrique (taille = habitants), pour tester les hypothèses, avec la mention « corrélation n'est pas causalité ».
-- **Interaction :** année, région, classe de part thermosensible, infobulles sur tous les graphiques.
-
-## Page 4 : Qualité des données
-
-- **Titre :** ce que les données disent, et ce qu'elles ne disent pas.
-- **Contenu :** valeurs manquantes par colonne et par secteur, doublons, contrôles de validité (valeurs négatives, plages plausibles), rupture de 2018, secret statistique, évolution des codes EPCI.
-
-## Page 5 : Conclusions
-
-- **Titre :** **À compléter** (insight principal en une phrase).
-- **Contenu :** 3 insights chiffrés, implications (priorisation de la rénovation, pointes hivernales, flexibilité), prochaines étapes, limites.
+The app has 5 pages. One idea per page, with a one-sentence title on top of each page.
 
 ---
 
-## Accessibilité et style
+## Page 1: Intro (hook and context)
 
-- Tous les axes sont nommés avec leurs unités.
-- Palette lisible pour les daltoniens.
-- Une courte description textuelle sous chaque graphique (équivalent du texte alternatif).
-- Source et licence citées en en-tête de l'application.
+- **Title (hook):** when it gets colder, not every territory consumes the same.
+- **Content:** why it matters (renovation, winter peaks), scope (2018-2025, about 1,200 EPCI), a reason for not using 2011-2017.
+- **Definitions (expander):** EPCI (CC, CA, CU), temperature-sensitive share, thermosensitivity (kWh per degree-day), degree-days, Residential only.
+- **Source and licence** at the bottom.
 
-## Plan de la vidéo (2 à 4 minutes)
+## Page 2: Overview
 
-| Temps | Contenu |
+- **Title:** the cold changes a lot from one winter to the next.
+- **Sidebar:** years, regions.
+- **KPIs (linked to the filters):** residential use (TWh), temperature-sensitive share, number of EPCI shown, winter of the last year compared with normal (degree-days).
+- **Visual 1:** line chart, consumption by sector.
+- **Visual 2:** bars, colder (red) or milder (blue) winter than normal, by year.
+- **Visual 3:** line, temperature-sensitive share by year. Message: the lowest share is in the mildest winter (2022).
+
+## Page 3: Territories
+
+- **Title:** dependence on the cold is not spread evenly.
+- **Switch:** temperature-sensitive share (%) or thermosensitivity (kWh per degree-day).
+- **Visual 4:** map by department (average over the selected years; Corsica in grey).
+- **Visual 5:** the 10 lowest and 10 highest EPCI.
+- **Visual 6:** small multiples by region (same scale), evolution over time.
+- **Visual 7:** scatter plot, electric heating rate (2024) against temperature-sensitive share, with the rank correlation (+0.12, weak) and the sentence "correlation is not causation".
+
+## Page 4: Data quality
+
+- **Title:** what the data says, and what it cannot say.
+- **Content:** list of limits, cleaning log, % of EPCI with a value by year, missing values by column, button to download the cleaned table.
+
+## Page 5: Conclusions
+
+- **Title:** four results with numbers (weather effect, territories, electric heating, falling sensitivity).
+- **Content:** what it means for renovation and winter peaks (to discuss), limits and next steps.
+
+---
+
+## Accessibility and style
+
+- All axes have a name and a unit.
+- Colour-blind-safe palettes (Viridis, blue and orange).
+- A short text description under every chart (alt text equivalent).
+- Source and licence shown in the sidebar and on the intro page.
+
+## Video plan (2-4 minutes)
+
+| Time | Content |
 |---|---|
-| 0:00 à 0:30 | Hook et question |
-| 0:30 à 1:15 | Vue d'ensemble et filtres |
-| 1:15 à 2:30 | Carte, classements, hypothèses |
-| 2:30 à 3:15 | Qualité des données et limites |
-| 3:15 à 3:45 | Conclusions et implications |
+| 0:00-0:30 | Hook and question |
+| 0:30-1:15 | Overview and filters (change region and years) |
+| 1:15-2:30 | Map, ranking, regions, heating scatter |
+| 2:30-3:15 | Data quality and limits |
+| 3:15-3:45 | Conclusions and implications |
