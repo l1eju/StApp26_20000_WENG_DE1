@@ -198,7 +198,7 @@ The data is already in `data/raw/`. To download it again from the Enedis API: `p
 
 - Deployed app: https://stapp2620000wengde1-rbhc46da23pktx4fc2jdsm.streamlit.app/
 - Code repository: https://github.com/l1eju/StApp26_20000_WENG_DE1
-- Demo video (2-4 minutes): **TO ADD**
+- Demo video: submitted separately with the project
 - Storyboard: see `storyboard.md`
 
 ---
