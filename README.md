@@ -10,15 +10,15 @@ Deadline: Saturday 24 October 2026, 12:00
 
 ## 1. Summary
 
-French homes use more electricity when it is cold, but not everywhere in the same way. Using Enedis open data (about 1,200 local areas, called EPCI, 2018-2025), the app shows **where winter electricity use depends most on temperature**.
+French homes use more electricity when it is cold, but not everywhere in the same way. Using Enedis open data (about 1,200 local areas, called EPCI, 2018-2025), the app answers three questions.
 
-Main results:
-1. **The weather changes the picture.** The temperature-sensitive share of residential use falls from 28.4 % (2018) to 14.3 % in 2022, the mildest winter (419 degree-days below normal). Comparing territories with one year only can mislead, so the map uses the average of the years.
-2. **Territories differ.** Over 2018-2025, the highest average share is in Hautes-Alpes (28.5 %) and the lowest in Alpes-Maritimes (15.8 %).
-3. **Electric heating alone does not explain the gaps.** The rank correlation between the electric heating rate and the temperature-sensitive share is only +0.12 across 1,191 EPCI.
-4. **Sensitivity per degree-day is falling in every region** (about 0.85 kWh per degree-day in 2018 and 0.54 in 2025, nationally). The data does not say why.
+1. **Does temperature change electricity use?** Yes, from one year to the next. In 2021, the only winter colder than normal, homes used about 157 TWh. In 2022, the mildest winter (419 degree-days below normal), they used about 143 TWh, and the temperature-sensitive share fell from 21.8 % to 14.3 %. Other factors (for example energy prices) may also play a role.
+2. **Which territories depend most on the cold?** Over 2018-2025, the highest average share is in Hautes-Alpes (28.5 %) and the lowest in Alpes-Maritimes (15.8 %). Mountain areas are high, the Mediterranean coast is low. Between EPCI the gap goes from about 11 % to 50 %.
+3. **Why do territories differ?** We tested electric heating: it explains very little (rank correlation +0.12 across 1,191 EPCI). Local climate is likely but not measured directly. Housing and other heating energies are not tested.
 
-Main limits: heating and housing data exist for one year only (2024), Corsica is missing, and an EPCI that covers several departments is counted in one department only.
+Also noticed: sensitivity per degree-day falls in every region (about 0.85 kWh per degree-day in 2018 and 0.54 in 2025). The data does not say why.
+
+Main limits: heating and housing data exist for one year only (2024), Corsica is missing, and an EPCI that covers several departments (for example the Métropole du Grand Paris) is shown in each of them with the same value.
 
 ---
 
@@ -28,11 +28,13 @@ Main limits: heating and housing data exist for one year only (2024), Corsica is
 
 **Main question:** where is electricity use most dependent on the cold, and what does it mean for renovation and winter peaks?
 
-**Sub-questions:**
-1. Where? Which areas have the highest temperature-sensitive share?
-2. Why (hypothesis)? Do electric heating, housing or the harshness of the winter explain the gaps?
-3. When? How do the sectors change over time, and can we see cold or mild winters?
-4. How unequal? Are the gaps between territories big and stable?
+**Three questions, each answered by charts in the app:**
+
+| Question | Charts | Answer (short) |
+|---|---|---|
+| 1. Does temperature change electricity use? | page 2: cold or mild winters, share by year, consumption by sector | Yes, over time (2021 against 2022) |
+| 2. Which territories depend most on the cold? | page 3: map, ranking, small multiples by region | Mountains high, Mediterranean low |
+| 3. Why do territories differ? | page 3: heating against sensitivity | Electric heating explains very little; other causes not measured |
 
 **Climate framing:** climate change is only the background. The data covers winter indicators over eight years, so it cannot prove more extreme weather, and it says nothing about summer air conditioning.
 
@@ -89,7 +91,7 @@ Before cleaning anything, `profile_data.py` looks at the raw data and writes a r
 | Heating and housing columns are 90-95 % empty: they exist for **2024 only** (and population for 2024-2025). | They are used in one chart only (heating versus sensitivity), and the app says so. |
 | Percentages are in 0-100, not 0-1. | Units are shown as % in all charts. |
 | 52 normal-winter degree-day values are above 4,000 (the largest real value is about 2,830, the largest error is 6,205). | Set to missing. |
-| 1,253 EPCI-years are repeated in several departments with exactly the same totals. | One row is kept (largest number of sites, then smallest department code, so the result is always the same). |
+| 1,253 EPCI-years are repeated in several departments with exactly the same totals. | For EPCI-level tables and totals, one row is kept (largest number of sites, then smallest department code, so the result is always the same). For the department map, the rows are kept so every department covered by the EPCI is coloured. |
 | 19,108 sector rows were the same repeated totals. | Removed. |
 | 8,228 sector rows have no consumption. This is the **statistical secrecy rule** (small groups are hidden). | Kept as missing, not replaced. |
 | 1,564 EPCI codes have several spellings of the name. | The most recent name is used. |
@@ -130,7 +132,7 @@ Sidebar filters: page, years, regions. Every chart has a tooltip, labelled axes 
 
 - **Missing data:** heating and housing data exist for 2024 only. Missing consumption is mostly statistical secrecy.
 - **Series break:** the sector and EPCI definitions change around 2018, so we start in 2018.
-- **Departments:** an EPCI that covers several departments is counted in one department only (the smallest code), so department values are approximate for those EPCI.
+- **Departments:** an EPCI that covers several departments is shown in each of them on the map, with the same value (its values are not split). Department values are therefore approximate for those EPCI. In the EPCI-level tables, one row is kept per EPCI and year.
 - **Corsica** is missing in the dataset.
 - **One year can mislead:** the sensitive share is 28 % in 2018 and 14 % in 2022 because of the weather. The map uses the average of the selected years.
 - **Falling sensitivity:** the fall of kWh per degree-day from 2018 to 2025 could come from renovation, behaviour or a change of method. The data does not tell.
@@ -147,8 +149,7 @@ The data is aggregated by Enedis and protected by statistical secrecy. We do not
 
 ## 8. Use of AI assistance
 
-Claude (Anthropic) was used to structurize the projet, help write the code and summerize the project for the README.md.
-Choices (topic, question, scope) and the checking of the results on the real data were done by the author. All numbers in this report come from the data, not from the assistant.
+Claude (Anthropic) was used as a coding and writing assistant: structure of the project, code, explanations. Choices (topic, question, scope) and the checking of the results on the real data were done by the author. All numbers in this report come from the data, not from the assistant.
 
 ---
 
@@ -187,8 +188,8 @@ StApp26_20000_WENG_DE1/
 You need Python **3.12 to 3.14**, 64-bit (tested with 3.12).
 
 ```
-python -m venv .venv            (py -3.12 -m venv .venv)
-.venv\Scripts\activate          (if it doesn't work do : Set-ExecutionPolicy -Scope Process Bypass)
+python -m venv .venv
+.venv\Scripts\activate            # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 python profile_data.py            # step 1: quality report
 python -m utils.prep              # step 2: cleaning report
@@ -201,7 +202,7 @@ The data is already in `data/raw/`. To download it again from the Enedis API: `p
 
 ## 11. Deliverables and links
 
-- Deployed app: **TO ADD**
+- Deployed app: https://stapp2620000wengde1-rbhc46da23pktx4fc2jdsm.streamlit.app/
 - Code repository: https://github.com/l1eju/StApp26_20000_WENG_DE1
 - Demo video (2-4 minutes): **TO ADD**
 - Storyboard: see `storyboard.md`

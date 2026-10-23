@@ -3,6 +3,8 @@
 **Audience:** local teams (towns, regions, Enedis).
 **Main message:** *Dependence on the cold is not spread evenly, and one winter alone can mislead.*
 
+**Three questions:** 1) Does temperature change electricity use? 2) Which territories depend most on the cold? 3) Why do territories differ?
+
 The app has 5 pages. One idea per page, with a one-sentence title on top of each page.
 
 ---
@@ -39,24 +41,5 @@ The app has 5 pages. One idea per page, with a one-sentence title on top of each
 
 ## Page 5: Conclusions
 
-- **Title:** four results with numbers (weather effect, territories, electric heating, falling sensitivity).
+- **Title:** the answers to the three questions, with numbers (temperature effect, territories, why they differ), plus what falling sensitivity shows.
 - **Content:** what it means for renovation and winter peaks (to discuss), limits and next steps.
-
----
-
-## Accessibility and style
-
-- All axes have a name and a unit.
-- Colour-blind-safe palettes (Viridis, blue and orange).
-- A short text description under every chart (alt text equivalent).
-- Source and licence shown in the sidebar and on the intro page.
-
-## Video plan (2-4 minutes)
-
-| Time | Content |
-|---|---|
-| 0:00-0:30 | Hook and question |
-| 0:30-1:15 | Overview and filters (change region and years) |
-| 1:15-2:30 | Map, ranking, regions, heating scatter |
-| 2:30-3:15 | Data quality and limits |
-| 3:15-3:45 | Conclusions and implications |

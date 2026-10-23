@@ -51,7 +51,7 @@ def _quintile_class(s: pd.Series) -> pd.Series:
 
 # --- Residential table (one row per EPCI and year) ------------------------------
 
-def clean_residential(res: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
+def clean_residential(res: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
     df = res.copy()
     log = {"residential rows (raw)": len(df)}
 
@@ -69,6 +69,12 @@ def clean_residential(res: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
         df.loc[bad, col] = np.nan
     log["thermosensibilite_moyenne_kwh_dju equal to 0 (kept)"] = int(
         (df["thermosensibilite_moyenne_kwh_dju"] == 0).sum())
+
+    # Keep one row per EPCI, year AND department (before removing the repeated totals).
+    # The department map uses it: an EPCI that covers several departments is shown in each of them.
+    by_department = df[["annee", "code_epci", "nom_epci", "code_departement", "nom_departement",
+                        "code_region", "nom_region", "nb_sites", "part_thermosensible",
+                        "thermosensibilite_moyenne_kwh_dju"]].copy()
 
     # 3. One row per EPCI and year. An EPCI that covers several departments is repeated
     #    once per department with the same totals, so we keep the largest row.
@@ -104,7 +110,7 @@ def clean_residential(res: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
     stable = n_years[n_years == len(years)].index
     df["in_stable_panel"] = df["code_epci"].isin(stable)
     log[f"EPCI present in every year {years[0]}-{years[-1]}"] = len(stable)
-    return df, log
+    return df, by_department, log
 
 
 # --- Sector table (one row per EPCI, year and sector) ---------------------------
@@ -151,7 +157,7 @@ def _group_table(epci: pd.DataFrame, keys: list[str]) -> pd.DataFrame:
 
 
 def make_tables(res: pd.DataFrame, sec: pd.DataFrame) -> dict:
-    epci, log_res = clean_residential(res)
+    epci, epci_by_department, log_res = clean_residential(res)
     sector, log_sec = clean_sectors(sec)
     start = config.ANALYSIS_START_YEAR
 
@@ -172,8 +178,18 @@ def make_tables(res: pd.DataFrame, sec: pd.DataFrame) -> dict:
         national[col] = weighted_mean_by(epci, "annee", col, "nb_sites")
     national = national.reset_index()
 
-    department = _group_table(epci, ["annee", "code_departement"])
-    dep_names = epci.drop_duplicates("code_departement").set_index("code_departement")["nom_departement"]
+    # Departments: built from the rows per department, so an EPCI that covers several
+    # departments counts in each of them (same value everywhere).
+    keys = ["annee", "code_departement"]
+    g = epci_by_department.groupby(keys)
+    department = pd.DataFrame({
+        "n_epci": g["code_epci"].nunique(),
+        "nb_sites": g["nb_sites"].sum(min_count=1),
+    })
+    for col in ("part_thermosensible", "thermosensibilite_moyenne_kwh_dju"):
+        department[col] = weighted_mean_by(epci_by_department, keys, col, "nb_sites")
+    department = department.reset_index()
+    dep_names = epci_by_department.drop_duplicates("code_departement").set_index("code_departement")["nom_departement"]
     department["nom_departement"] = department["code_departement"].map(dep_names)
 
     region = _group_table(epci, ["annee", "code_region"])
@@ -193,6 +209,7 @@ def make_tables(res: pd.DataFrame, sec: pd.DataFrame) -> dict:
     }
     return {
         "epci_year": epci,
+        "epci_department_year": epci_by_department,
         "sector_year": sector_year,
         "sector_epci_year": sector_epci,
         "national_year": national,

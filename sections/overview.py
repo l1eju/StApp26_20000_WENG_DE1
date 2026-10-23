@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 
 from utils import viz
+from utils.ui import analysis
 from utils.prep import weighted_mean_by
 
 
@@ -41,10 +42,13 @@ def render(data, filters):
     st.plotly_chart(viz.sector_lines(sec), width="stretch")
     st.caption("Line chart. For all France, residential is the largest sector (about 140-155 TWh), then services "
                "(about 115-120 TWh) and industry (about 60 TWh). Residential use drops after 2021.")
+    analysis("sector")
 
     left, right = st.columns(2)
     left.plotly_chart(viz.weather_bars(yearly), width="stretch")
     left.caption("Bars. Red = colder than normal, blue = milder. 2022 was by far the mildest winter.")
+    analysis("weather", left)
     right.plotly_chart(viz.share_vs_weather(yearly), width="stretch")
     right.caption("Line. The temperature-sensitive share is lowest in the mild winter of 2022: "
                   "comparing territories on one year only can mislead.")
+    analysis("share", right)

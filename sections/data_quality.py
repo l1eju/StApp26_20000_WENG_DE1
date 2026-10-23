@@ -1,6 +1,7 @@
 import streamlit as st
 
 import config
+from utils.ui import analysis
 
 
 def render(data, filters):
@@ -16,6 +17,7 @@ def render(data, filters):
         "- **Corsica** is absent from the dataset.\n"
         "- **Causality:** the charts show correlations, not causes."
     )
+    analysis("quality")
     st.subheader("Cleaning log")
     st.dataframe(q["cleaning_log"], hide_index=True, width="stretch")
     st.subheader("Share of EPCI with a value, by year (%)")

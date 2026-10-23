@@ -5,6 +5,7 @@ import config
 from sections import conclusions, data_quality, deep_dives, intro, overview
 from utils.io import fetch_and_cache
 from utils.prep import make_tables
+from utils.ui import sidebar_profile
 
 st.set_page_config(page_title="Facing the cold", page_icon="❄️", layout="wide")
 
@@ -18,6 +19,7 @@ data = get_data()
 epci_all = data["epci_year"]
 epci_all = epci_all[epci_all["annee"] >= config.ANALYSIS_START_YEAR]
 
+sidebar_profile()
 st.sidebar.title("Facing the cold")
 PAGES = {"1. Intro": intro, "2. Overview": overview, "3. Territories": deep_dives,
          "4. Data quality": data_quality, "5. Conclusions": conclusions}

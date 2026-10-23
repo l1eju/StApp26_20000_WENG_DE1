@@ -15,6 +15,12 @@ def render(data, filters):
         f"**Scope:** {config.ANALYSIS_START_YEAR}–2025, about 1,200 intercommunal areas (EPCI) in metropolitan France. "
         "Why not 2011? Before 2018 the EPCI map and the sector definitions change, and the temperature data is missing."
     )
+    st.markdown(
+        "**Three questions in this app**\n"
+        "1. Does temperature change electricity use? *(page 2)*\n"
+        "2. Which territories depend most on the cold? *(page 3)*\n"
+        "3. Why do territories differ? *(page 3)*"
+    )
     with st.expander("Definitions: what do these terms mean?"):
         st.markdown(
             "- **EPCI**: a group of neighbouring towns that share services (a local area, bigger than a town). "
