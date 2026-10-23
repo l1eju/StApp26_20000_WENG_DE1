@@ -147,13 +147,7 @@ The data is aggregated by Enedis and protected by statistical secrecy. We do not
 
 ---
 
-## 8. Use of AI assistance
-
-Claude (Anthropic) was used as a coding and writing assistant: structure of the project, code, explanations. Choices (topic, question, scope) and the checking of the results on the real data were done by the author. All numbers in this report come from the data, not from the assistant.
-
----
-
-## 9. Project structure
+## 8. Project structure
 
 ```
 StApp26_20000_WENG_DE1/
@@ -183,7 +177,7 @@ StApp26_20000_WENG_DE1/
 
 ---
 
-## 10. How to run it
+## 9. How to run it
 
 You need Python **3.12 to 3.14**, 64-bit (tested with 3.12).
 
@@ -200,7 +194,7 @@ The data is already in `data/raw/`. To download it again from the Enedis API: `p
 
 ---
 
-## 11. Deliverables and links
+## 10. Deliverables and links
 
 - Deployed app: https://stapp2620000wengde1-rbhc46da23pktx4fc2jdsm.streamlit.app/
 - Code repository: https://github.com/l1eju/StApp26_20000_WENG_DE1
@@ -209,7 +203,7 @@ The data is already in `data/raw/`. To download it again from the Enedis API: `p
 
 ---
 
-## 12. References
+## 11. References
 
 - Enedis Open Data, dataset "Consommation et thermosensibilité d'électricité à la maille EPCI de 2011 à 2025 (par secteur d'activité)", Licence Ouverte 2.0
 - Enedis, methodology note on thermosensitivity (attachment of the dataset)
