@@ -179,14 +179,15 @@ StApp26_20000_WENG_DE1/
 
 ## 9. How to run it
 
-You need Python **3.12 to 3.14**, 64-bit (tested with 3.12).
+You need Python **3.12 to 3.14**, 64-bit (tested with 3.12.10).
 
 ```
-python -m venv .venv
+python -m venv .venv              (py -3.12 -m venv .venv)
+(Set-ExecutionPolicy -Scope Process Bypass)
 .venv\Scripts\activate            # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
-python profile_data.py            # step 1: quality report
-python -m utils.prep              # step 2: cleaning report
+python profile_data.py    
+python -m utils.prep  
 streamlit run app.py              # the app
 ```
 
