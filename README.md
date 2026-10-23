@@ -13,7 +13,7 @@ Deadline: Saturday 24 October 2026, 12:00
 French homes use more electricity when it is cold, but not everywhere in the same way. Using Enedis open data (about 1,200 local areas, called EPCI, 2018-2025), the app answers three questions.
 
 1. **Does temperature change electricity use?** Yes, from one year to the next. In 2021, the only winter colder than normal, homes used about 157 TWh. In 2022, the mildest winter (419 degree-days below normal), they used about 143 TWh, and the temperature-sensitive share fell from 21.8 % to 14.3 %. Other factors (for example energy prices) may also play a role.
-2. **Which territories depend most on the cold?** Over 2018-2025, the highest average share is in Hautes-Alpes (28.5 %) and the lowest in Alpes-Maritimes (15.8 %). Mountain areas are high, the Mediterranean coast is low. Between EPCI the gap goes from about 11 % to 50 %.
+2. **Which territories depend most on the cold?** Over 2018-2025, the highest average share is in Eure-et-Loir (26.9 %) and the lowest in Alpes-Maritimes (15.8 %). The Mediterranean coast is low. Between EPCI the gap goes from about 11 % to 50 %.
 3. **Why do territories differ?** We tested electric heating: it explains very little (rank correlation +0.12 across 1,191 EPCI). Local climate is likely but not measured directly. Housing and other heating energies are not tested.
 
 Also noticed: sensitivity per degree-day falls in every region (about 0.85 kWh per degree-day in 2018 and 0.54 in 2025). The data does not say why.
