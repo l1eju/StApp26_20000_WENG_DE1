@@ -33,12 +33,13 @@ ANALYSIS = {
         "But 2018 and 2019 had similar weather and different shares, so something else also changes."
     ),
     "map": (
-        "The share goes from about 16 % to 28 %. The Mediterranean coast is low (mild winters), "
-        "the mountains are high. A lighter colour means that heating weighs more in winter use."
+        "The share goes from about 16 % to 27 %. The Mediterranean coast and the Pyrenees are low. "
+        "High values are found around Paris (for example Eure-et-Loir) and in some Alpine departments. "
+        "Yellow means that heating weighs more in winter use."
     ),
     "ranking": (
         "The gaps between EPCI are much bigger than between departments: from about 11 % to 50 %. "
-        "The highest ones are small mountain areas."
+        "Some of the highest ones are small mountain areas."
     ),
     "regions": (
         "All regions have the same shape: high in 2018, a dip in 2022 (when the temperature is milder), then a partial recovery. "
@@ -49,5 +50,8 @@ ANALYSIS = {
         "The heating rate is only available for 2024."
     ),
     "quality": "",
-    "conclusion": "We have seen that temperature has an impact on the energy consumption, but it is not the only factor. The share of temperature-sensitive energy is higher in colder winters, but other factors also play a role.",
+    "conclusion": "1) Yes, temperature changes electricity use: the temperature-sensitive share is higher in a cold winter (2021) and lower in a mild one (2022). "
+                    "2) Areas are very different: the Mediterranean coast and the Pyrenees depend less on the cold, "
+                    "and some areas near Paris depend more. "
+                    "3) Electric heating alone does not explain the gaps. Local climate and housing probably matter too, but a correlation is not a proof."
 }
