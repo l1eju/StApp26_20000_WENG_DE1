@@ -1,11 +1,11 @@
 
 ======================================================================
-residentiel : dimensions
+residentiel: size
 ======================================================================
-lignes = 25728   colonnes = 29
-mémoire ≈ 7.7 Mo
-années : 2011 à 2025 (15 valeurs)
-EPCI distincts par année :
+rows = 25728   columns = 29
+memory ≈ 7.7 MB
+years: 2011 to 2025 (15 values)
+distinct EPCI per year:
 annee
 2011    2472
 2012    2472
@@ -24,12 +24,12 @@ annee
 2025    1191
 
 ======================================================================
-secteurs : dimensions
+secteurs: size
 ======================================================================
-lignes = 502422   colonnes = 9
-mémoire ≈ 49.7 Mo
-années : 2011 à 2025 (15 valeurs)
-EPCI distincts par année :
+rows = 502422   columns = 9
+memory ≈ 49.7 MB
+years: 2011 to 2025 (15 values)
+distinct EPCI per year:
 annee
 2011    2472
 2012    2472
@@ -48,7 +48,7 @@ annee
 2025    1191
 
 ======================================================================
-residentiel : valeurs manquantes (%)
+residentiel: missing values (%)
 ======================================================================
 taux_de_chauffage_electrique                                              95.0
 residences_principales_apres_2006                                         95.0
@@ -81,7 +81,7 @@ type_epci                                                                  0.0
 code_departement                                                           0.0
 
 ======================================================================
-residentiel : plages de valeurs
+residentiel: value ranges
 ======================================================================
                                         min        50%          max
 part_thermosensible                   2.100     22.860       60.880
@@ -93,24 +93,24 @@ dju_a_tn                           1066.727   1653.044     6205.000
 conso_moyenne_mwh                     2.152      5.365       10.197
 nb_sites                             75.000   8313.000  3706272.000
 nombre_d_habitants                 3915.000  23592.000  7103801.000
-part_thermosensible : 100.0% des valeurs > 1 ; 0.0% > 100  (unité : fraction 0-1 ou pourcentage 0-100 ?)
-taux_de_chauffage_electrique : 100.0% des valeurs > 1 ; 0.0% > 100  (unité : fraction 0-1 ou pourcentage 0-100 ?)
-conso_totale_mwh : 0 valeurs négatives
-conso_moyenne_mwh : 0 valeurs négatives
+part_thermosensible: 100.0% of values > 1; 0.0% > 100  (unit: fraction 0-1 or percentage 0-100?)
+taux_de_chauffage_electrique: 100.0% of values > 1; 0.0% > 100  (unit: fraction 0-1 or percentage 0-100?)
+conso_totale_mwh: 0 negative values
+conso_moyenne_mwh: 0 negative values
 
 ======================================================================
-doublons et EPCI à cheval sur plusieurs départements
+duplicates and EPCI that cover several departments
 ======================================================================
-residentiel : lignes dupliquées sur ['annee', 'code_epci', 'code_departement'] = 0
-residentiel : couples (année, EPCI) présents dans >1 département = 1253 sur 24108
-secteurs : lignes dupliquées sur ['annee', 'code_epci', 'code_departement', 'code_categorie_consommation', 'code_grand_secteur', 'code_secteur_naf2'] = 0
-secteurs : groupes présents dans >1 département = 14724 sur 483314
-  dont conso identique d'un département à l'autre (total répété) : 92.7%
+residentiel: duplicated rows on ['annee', 'code_epci', 'code_departement'] = 0
+residentiel: (year, EPCI) pairs found in more than 1 department = 1253 out of 24108
+secteurs: duplicated rows on ['annee', 'code_epci', 'code_departement', 'code_categorie_consommation', 'code_grand_secteur', 'code_secteur_naf2'] = 0
+secteurs: groups found in more than 1 department = 14724 out of 483314
+  of which the same consumption in every department (repeated total): 92.7%
 
 ======================================================================
-secteurs : rupture de série autour de 2018
+secteurs: break in the series around 2018
 ======================================================================
-consommation totale (GWh) par grand secteur (EPCI multi-départements possiblement comptés plusieurs fois) :
+total consumption (GWh) by main sector (EPCI in several departments may be counted several times):
 code_grand_secteur  AGRICULTURE  INCONNU  INDUSTRIE  PETIT_PROFESSIONNEL  RESIDENTIEL  TERTIAIRE
 annee                                                                                           
 2011                    10745.0   5977.0   307364.0             440936.0    1180071.0  1229963.0
@@ -128,7 +128,7 @@ annee
 2023                     7076.0    574.0    75023.0                  NaN     210506.0   208037.0
 2024                     6933.0    573.0    72907.0                  NaN     210988.0   206813.0
 2025                     7301.0    509.0    72549.0                  NaN     212996.0   208761.0
-nombre de lignes par grand secteur :
+number of rows by main sector:
 code_grand_secteur  AGRICULTURE  INCONNU  INDUSTRIE  PETIT_PROFESSIONNEL  RESIDENTIEL  TERTIAIRE
 annee                                                                                           
 2011                     2627.0   2627.0     2627.0               2627.0       2627.0     2627.0
@@ -148,10 +148,10 @@ annee
 2025                     2858.0   1510.0    16111.0                  NaN       1289.0    29731.0
 
 ======================================================================
-codes et noms EPCI (residentiel)
+EPCI codes and names (residentiel)
 ======================================================================
-codes distincts = 3246   noms distincts = 5542
-codes avec plusieurs noms = 1564
+distinct codes = 3246   distinct names = 5542
+codes with several names = 1564
   200000172 : ['CC Faucigny-Glières', 'Communauté de communes Faucigny-Glières']
   200000321 : ['CA des 2 Rives de la Seine', 'CA des deux Rives de la Seine']
   200000420 : ['CC de la Vôge Vers les Rives de la Moselle', 'CC de la Vôge vers les Rives de la Moselle']
@@ -159,11 +159,6 @@ codes avec plusieurs noms = 1564
   200000487 : ['CC du Plateau de Lommoye', 'CC du Plateau de Lommoye (CCPL)', 'CC du Plateau de Lommoye (Ccpl)']
 
 ======================================================================
-codes département : données contre fond de carte
+department codes: data versus map file
 ======================================================================
-codes dans les données = 94   codes dans le fond de carte = 96
-longueurs des codes dans les données : {2: 25728}
-exemples de codes dans les données : ['01', '02', '03', '04', '05', '06'] ... ['90', '91', '92', '93', '94', '95']
-codes des données ABSENTS du fond de carte (non affichables) : aucun
-codes du fond de carte ABSENTS des données (départements vides) : ['2A', '2B']
-noms de département distincts = 95 (codes distincts = 94)
+map file not found: C:\Users\wengj\Documents\ING2\Data_Analysis\Streamlit_Project\StApp26_20000_WENG_DE1\assets\departements.json (check GEOJSON_PATH in config.py)
